@@ -1,0 +1,53 @@
+{
+  "name": "ngx-boot-modal",
+  "version": "0.0.1",
+  "description": "Open modal window (dialog box) for your angular2 applications using bootstrap3.",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "private": true,
+  "author": {
+    "name": "Fernando Fariña",
+    "email": "fernandofarinagarmendia@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/penniath/ngx-boot-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/penniath/ngx-boot-modal/issues"
+  },
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ngx-boot-modal.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ngx-boot-modal.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
+  },
+  "tags": [
+    "modal",
+    "angular2",
+    "typescript",
+    "angular2-modal"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^4.4.3",
+    "@angular/router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.4.3",
+    "@angular/compiler": "^4.4.3",
+    "@angular/compiler-cli": "^4.4.3",
+    "@angular/core": "^4.4.3",
+    "@angular/router": "^4.4.3",
+    "@types/node": "^8.0.30",
+    "bootstrap": "^3.3.7",
+    "es6-shim": "^0.35.2",
+    "reflect-metadata": "^0.1.10",
+    "rollup": "^0.50.0",
+    "rxjs": "^5.0.3",
+    "tslint": "^5.7.0",
+    "tslint-stylish": "^2.1.0-beta",
+    "typescript": "^2.5.2",
+    "uglify-js": "^3.1.1",
+    "zone.js": "^0.8.17"
+  }
+}

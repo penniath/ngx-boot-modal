@@ -1,0 +1,9 @@
+typings/
+build/
+factories/
+node_modules
+npm-debug.log
+.idea
+dist/
+**/*.ngsummary.json
+**/*.ngfactory.ts
