@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 export const modalTemplate = `
         <div class="modal"
@@ -34,7 +34,8 @@ export const modalTemplate = `
     selector: 'modal',
     template: modalTemplate
 })
-export class ModalComponent {
+export class ModalComponent implements OnInit {
+    @Input() public autoShow = false;
     @Input() public backdrop = true;
     @Input() public cancelButtonLabel: string;
     @Input() public closeOnEscape = true;
@@ -54,6 +55,12 @@ export class ModalComponent {
 
     constructor() {
         this.createBackDrop();
+    }
+
+    ngOnInit() {
+        if (this.autoShow) {
+            this.open();
+        }
     }
 
     ngOnDestroy() {

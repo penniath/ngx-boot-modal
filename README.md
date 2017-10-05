@@ -30,6 +30,7 @@ Import `ModalModule` in your app. Then you can use `modal` component:
         cancelButtonLabel="cancel"
         submitButtonLabel="submit"
         modalClass="modal-lg modal-sm any-other-css-class"
+        [autoShow]="true|false"
         [hideCloseButton]="true|false"
         [closeOnEscape]="true|false"
         [closeOnOutsideClick]="true|false"
