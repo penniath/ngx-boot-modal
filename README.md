@@ -31,6 +31,8 @@ Import `ModalModule` in your app. Then you can use `modal` component:
         submitButtonLabel="submit"
         modalClass="modal-lg modal-sm any-other-css-class"
         [autoShow]="true|false"
+        [hideHeader]="true|false"
+        [hideFooter]="true|false"
         [hideCloseButton]="true|false"
         [closeOnEscape]="true|false"
         [closeOnOutsideClick]="true|false"

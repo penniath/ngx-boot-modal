@@ -12,7 +12,7 @@ export const modalTemplate = `
              (click)="closeOnOutsideClick ? checkClickOutside($event) : 0">
             <div [class]="'modal-dialog ' + modalClass" #modalDialog>
                 <div class="modal-content" tabindex="0" *ngIf="isOpened">
-                    <div class="modal-header">
+                    <div class="modal-header" *ngIf="!hideHeader">
                         <button *ngIf="!hideCloseButton" type="button" class="close" data-dismiss="modal" [attr.aria-label]="cancelButtonLabel || 'Close'" (click)="close()"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" *ngIf="title">{{ title }}</h4>
                         <ng-content select="modal-header"></ng-content>
@@ -20,7 +20,7 @@ export const modalTemplate = `
                     <div class="modal-body">
                         <ng-content select="modal-content"></ng-content>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" *ngIf="!hideFooter">
                         <ng-content select="modal-footer"></ng-content>
                         <button *ngIf="cancelButtonLabel" type="button" class="btn btn-default" data-dismiss="modal" (click)="close()">{{ cancelButtonLabel }}</button>
                         <button *ngIf="submitButtonLabel" type="button" class="btn btn-primary" (click)="onSubmit.emit(undefined)">{{ submitButtonLabel }}</button>
@@ -41,6 +41,8 @@ export class ModalComponent implements OnInit {
     @Input() public closeOnEscape = true;
     @Input() public closeOnOutsideClick = true;
     @Input() public hideCloseButton = false;
+    @Input() public hideFooter = false;
+    @Input() public hideHeader = false;
     @Input() public modalClass: string;
     @Input() public submitButtonLabel: string;
     @Input() public title: string;
