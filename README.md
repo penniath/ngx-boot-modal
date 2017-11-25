@@ -36,6 +36,7 @@ Import `ModalModule` in your app. Then you can use `modal` component:
         [hideCloseButton]="true|false"
         [closeOnEscape]="true|false"
         [closeOnOutsideClick]="true|false"
+        [zIndex]="100"
         (onOpen)="actionOnOpen()"
         (onClose)="actionOnClose()"
         (onSubmit)="actionOnSubmit()">

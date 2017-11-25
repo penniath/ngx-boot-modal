@@ -8,6 +8,7 @@ export const modalTemplate = `
              (keydown.esc)="closeOnEscape ? close() : 0"
              [class.in]="isOpened"
              [class.fade]="isOpened"
+             [style.z-index]="zIndex"
              [ngStyle]="{ display: isOpened ? 'block' : 'none' }"
              (click)="closeOnOutsideClick ? checkClickOutside($event) : 0">
             <div [class]="'modal-dialog ' + modalClass" #modalDialog>
@@ -46,6 +47,7 @@ export class ModalComponent implements OnInit {
     @Input() public modalClass: string;
     @Input() public submitButtonLabel: string;
     @Input() public title: string;
+    @Input() public zIndex: number;
     @Output() public onClose = new EventEmitter(false);
     @Output() public onOpen = new EventEmitter(false);
     @Output() public onSubmit = new EventEmitter(false);
